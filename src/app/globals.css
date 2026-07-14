@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #030712;
+  --color-foreground: #f9fafb;
+  --color-card-bg: #0b0f19;
+  --color-card-border: rgba(255, 255, 255, 0.06);
+  --color-card-hover: #111827;
+  --color-brand-emerald: #10b981;
+  --color-brand-cyan: #06b6d4;
+  --color-brand-purple: #8b5cf6;
+  --color-brand-pink: #ec4899;
+}
+
+/* ===========================
+   Design Tokens & Animations
+   =========================== */
+
+:root {
+  --background: #030712;
+  --foreground: #f9fafb;
+  --card: #0b0f19;
+  --card-hover: #111827;
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #10b981;
+  --primary-hover: #059669;
+  --secondary: #1f2937;
+  --muted: #9ca3af;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius: 20px;
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Scrollbar Customization
+   =========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 10px;
+  border: 2px solid #030712;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* ===========================
+   Text Selection
+   =========================== */
+
+::selection {
+  background: rgba(16, 185, 129, 0.25);
+  color: #10b981;
+}
+
+/* ===========================
+   Core Glassmorphism & UI Utilities
+   =========================== */
+
+.container-custom {
+  width: min(1400px, 94%);
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Glassmorphism Panel */
+.glass {
+  background: rgba(11, 15, 25, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-glow-emerald {
+  box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.12);
+}
+
+.glass-glow-cyan {
+  box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.12);
+}
+
+.glass-glow-purple {
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.12);
+}
+
+.glass-glow-rose {
+  box-shadow: 0 0 40px -10px rgba(236, 72, 153, 0.12);
+}
+
+.glass-glow-amber {
+  box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.12);
+}
+
+/* Card Styling */
+.card-premium {
+  background: rgba(17, 24, 39, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 
+              0 0 1px 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.card-premium:hover::before {
+  opacity: 1;
+}
+
+/* High-tech Gradient Text */
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-rainbow {
+  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glowing Spotlights */
+.glow-spotlight-green {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+}
+
+.glow-spotlight-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+}
+
+/* Custom Grid Dot Background */
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Progress ring / circular meter classes */
+.progress-circle {
+  transition: stroke-dashoffset 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}

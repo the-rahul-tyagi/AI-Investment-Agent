@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -8,34 +8,81 @@
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
+!.yarn/sdk
 !.yarn/versions
 
-# testing
+# Testing
 /coverage
+/.nyc_output
 
-# next.js
+# Next.js build outputs
 /.next/
 /out/
-
-# production
 /build
 
-# misc
-.DS_Store
-*.pem
+# Production bundles
+/dist
 
-# debug
+# Debug Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Environment Variables & API Keys (CRITICAL: Never commit secrets!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.local
 
-# vercel
+# Vercel deployments
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDEs, Editors & OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# VS Code config
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# IntelliJ / WebStorm config
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# System credentials / Certificates
+*.pem
+*.key
+*.cert
+*.crt
+
+# Temporary caches
+.eslintcache
+.stylelintcache
+*.log
+.cache/
+.sass-cache/
+
+# Database files
+*.db
+*.sqlite
